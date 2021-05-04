@@ -1,0 +1,73 @@
+﻿<Window x:Class="Vistas.CRUD.Services.AltaServicio"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AltaServicio" Height="566" Width="382" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+    <Grid>
+        <DockPanel Margin="0,2,0,450">
+            <TextBlock FontSize="28" HorizontalAlignment="Left" Margin="10,0,0,0" Name="txtbTitle" Text="Nuevo Servicio" VerticalAlignment="Bottom" />
+        </DockPanel>
+        <GroupBox Header="Datos" Height="352" HorizontalAlignment="Left" Margin="8,83,0,0" Name="gbAddCity" VerticalAlignment="Top" Width="352" BorderBrush="Black">
+            <Grid Height="402" Width="342">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110*"/>
+                    <ColumnDefinition Width="235*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Empresa" HorizontalAlignment="Left" Margin="13,4,0,0" Name="label1" VerticalAlignment="Top" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="0,4,0,0" Name="cmbEmpresas" VerticalAlignment="Top" Width="215" Loaded="cmbEmpresas_Loaded" SelectionChanged="cmbEmpresas_SelectionChanged" Grid.Column="1" />
+                <Label Content="Numero de coche" HorizontalAlignment="Left" Margin="-2,61,0,0" Name="lblAutobus" VerticalAlignment="Top"/>
+                <ComboBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="0,61,0,0" Name="cmbAutobus" VerticalAlignment="Top" Width="215" />
+                <Label Content="Fecha y Hora" HorizontalAlignment="Left" Margin="13,118,0,0" Name="lblFecha" VerticalAlignment="Top"/>
+                <DatePicker Name="dpFecha" Grid.Column="1" HorizontalAlignment="Left" Margin="0,118,0,0" VerticalAlignment="Top" 
+                              SelectedDateFormat="Short" Width="215" 
+                           >
+                    <DatePicker.Resources>
+                        <Style TargetType="{x:Type DatePickerTextBox}">
+                            <Setter Property="Control.Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <TextBox x:Name="PART_TextBox"
+                                            Text="{Binding Path=SelectedDate, StringFormat='yyyy-MM-dd HH:mm', 
+                                            RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" MaxLength="16" />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </DatePicker.Resources>
+                </DatePicker>
+
+                <Label Content="CiudadOrigen" HorizontalAlignment="Left" Margin="13,175,0,0" Name="lblCiudadOrigen" VerticalAlignment="Top"/>
+                <ComboBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="0,175,0,0" Name="cmbCiudadOrigen" VerticalAlignment="Top" Width="215" Loaded="cmbCiudadOrigen_Loaded" />
+                <Label Content="CiudadDestino" HorizontalAlignment="Left" Margin="13,232,0,0" Name="lblCiudadDestino" VerticalAlignment="Top"/>
+                <ComboBox Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="0,232,0,0" Name="cmbCiudadDestino" VerticalAlignment="Top" Width="215" Loaded="cmbCiudadDestino_Loaded" />
+                <Label Content="Estado" HorizontalAlignment="Left" Margin="13,271,0,0" Name="lblTerminal" VerticalAlignment="Top"/>
+                <StackPanel Margin="0,271,0,104" Grid.Column="1" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150*"/>
+                            <ColumnDefinition Width="155*"/>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton  Margin="2,5,0,0" Name="activo" >
+                            <WrapPanel>
+                                <TextBlock Text="ACTIVO" Foreground="Green" Grid.Column="1"  />
+                            </WrapPanel>
+                        </RadioButton>
+
+                        <RadioButton Margin="2,5,0,0" Name="cancelado" Grid.Column="1">
+                            <WrapPanel>
+                                <TextBlock Text="CANCELADO" Foreground="Red" />
+                            </WrapPanel>
+                        </RadioButton>
+                    </Grid>
+                </StackPanel>
+
+
+            </Grid>
+        </GroupBox>
+        <!-- Botones -->
+        <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="29,0,0,25" Height="47">
+            <Button Content="Guardar" HorizontalAlignment="Left" Margin="10,0,0,0" Name="btnGuardar" VerticalAlignment="Top" Style="{StaticResource StyleBtnPrimary}" Focusable="True" Click="btnGuardar_Click" />
+            <Button Content="Cancelar" HorizontalAlignment="Left" Margin="130,0,10,0" Name="btnCancelar" VerticalAlignment="Top" Style="{StaticResource StyleBtnRed}" Focusable="False" Click="btnCancelar_Click" />
+        </WrapPanel>
+    </Grid>
+</Window>
+

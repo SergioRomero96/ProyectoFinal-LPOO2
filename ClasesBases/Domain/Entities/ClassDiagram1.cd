@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ClasesBases.Rol">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAABAAAAAAAAAAAAAAAIACA=</HashCode>
+      <FileName>Domain\Entities\Rol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClasesBases.Usuario">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEgAAEAACAAgUIACAABRIAAgSCAAhAAAIYAQACAAAA=</HashCode>
+      <FileName>Domain\Entities\Usuario.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Rol" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ClasesBases.Cliente">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAACAAgQAECAEAhAAAAAIEAACAAAkBAoAEAAA=</HashCode>
+      <FileName>Domain\Entities\Cliente.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ClasesBases.Ciudad">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEACAABAAgAAAQAACAAABAAAAAAAAAEAAAABAAAAABA=</HashCode>
+      <FileName>Domain\Entities\Ciudad.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ClasesBases.Terminal">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAQAIDAIAAAgAAAAAAAEIAAIBAAAAABA=</HashCode>
+      <FileName>Domain\Entities\Terminal.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ClasesBases.Autobus">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACAAAUEQAAAQAACIwEBAAAAAAAABAAAKAAAAAMApA=</HashCode>
+      <FileName>Domain\Entities\Autobus.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Empresa" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ClasesBases.Servicio">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAARAAAAEAQAAAAGAAABAAAAQAAEABCSBAAAAAA=</HashCode>
+      <FileName>Domain\Entities\Servicio.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Autobus" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ClasesBases.Pasaje">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAIAQAECAEAAAAAAAAIAACACAAAAAAAAAQIAACAA=</HashCode>
+      <FileName>Domain\Entities\Pasaje.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClasesBases.Empresa">
+    <Position X="14" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAASAAAQAUCCAAgAQKACAAiAAAACAAAgEAAAA=</HashCode>
+      <FileName>Domain\Entities\Empresa.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

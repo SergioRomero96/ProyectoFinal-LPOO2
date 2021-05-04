@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F885FCCB-C5D9-479D-8FEF-31FE889E7A7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClasesBases</RootNamespace>
+    <AssemblyName>ClasesBases</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Validate.cs" />
+    <Compile Include="Commons\Cache\UserLoginCache.cs" />
+    <Compile Include="Commons\Response.cs" />
+    <Compile Include="DataAccess\RepositoriesImpl\AutoBusRepository.cs" />
+    <Compile Include="DataAccess\RepositoriesImpl\CiudadRepository.cs" />
+    <Compile Include="DataAccess\RepositoriesImpl\ClienteRepository.cs" />
+    <Compile Include="DataAccess\RepositoriesImpl\EmpresaRepository.cs" />
+    <Compile Include="DataAccess\RepositoriesImpl\PasajeRepository.cs" />
+    <Compile Include="DataAccess\RepositoriesImpl\Repository.cs" />
+    <Compile Include="DataAccess\RepositoriesImpl\ServicioRepository.cs" />
+    <Compile Include="DataAccess\RepositoriesImpl\TerminalRepository.cs" />
+    <Compile Include="DataAccess\RepositoriesImpl\UsuarioRepository.cs" />
+    <Compile Include="DataAccess\UnitOfWorkImpl\UnitOfWork.cs" />
+    <Compile Include="Domain\Entities\Autobus.cs" />
+    <Compile Include="Domain\Entities\Ciudad.cs" />
+    <Compile Include="Domain\Repositories\IAutobusRepository.cs" />
+    <Compile Include="Domain\Repositories\ICiudadRepository.cs" />
+    <Compile Include="Domain\Repositories\IClienteRepository.cs" />
+    <Compile Include="Domain\Repositories\IEmpresaRepository.cs" />
+    <Compile Include="Domain\Repositories\IPasajeRepository.cs" />
+    <Compile Include="Domain\Repositories\IRepository.cs" />
+    <Compile Include="Domain\Repositories\IServicioRepository.cs" />
+    <Compile Include="Domain\Repositories\ITerminalRespository.cs" />
+    <Compile Include="Domain\Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Domain\UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="Domain\Entities\Empresa.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Entities\Rol.cs" />
+    <Compile Include="Domain\Entities\Cliente.cs" />
+    <Compile Include="Domain\Entities\Pasaje.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Domain\Entities\Servicio.cs" />
+    <Compile Include="Domain\Entities\Terminal.cs" />
+    <Compile Include="Domain\Entities\Usuario.cs" />
+    <Compile Include="Services\DTOs\AutobusDto.cs" />
+    <Compile Include="Services\DTOs\ClienteDto.cs" />
+    <Compile Include="Services\DTOs\PasajeDto.cs" />
+    <Compile Include="Services\DTOs\ServicioDto.cs" />
+    <Compile Include="Services\DTOs\TicketDto.cs" />
+    <Compile Include="Services\Extension\ClienteMapper.cs" />
+    <Compile Include="Services\Extension\ServicioMapper.cs" />
+    <Compile Include="Services\Extension\TerminalMapper.cs" />
+    <Compile Include="Services\Extension\UsuarioMapper.cs" />
+    <Compile Include="Services\Implementation\AutobusService.cs" />
+    <Compile Include="Services\Implementation\CiudadService.cs" />
+    <Compile Include="Services\Implementation\ClienteService.cs" />
+    <Compile Include="Services\Implementation\EmpresaService.cs" />
+    <Compile Include="Services\Implementation\PasajeSevice.cs" />
+    <Compile Include="Services\Implementation\ServicioService.cs" />
+    <Compile Include="Services\Implementation\TerminalService.cs" />
+    <Compile Include="Services\Implementation\UsuarioService.cs" />
+    <Compile Include="Services\Interfaces\IService.cs" />
+    <Compile Include="WorkClient.cs" />
+    <Compile Include="WorkUsuario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Domain\Entities\ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\Context\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

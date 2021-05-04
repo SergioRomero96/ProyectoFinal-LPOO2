@@ -1,0 +1,27 @@
+﻿<Window x:Class="Vistas.CRUD.Ciudades.AltaCiudad"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestión de Ciudad" Height="324" Width="350" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid>
+        <!--GroupBox-->
+        <GroupBox Header="Datos" Height="160" HorizontalAlignment="Stretch" Margin="12,62,0,0" Name="gbAddCity" VerticalAlignment="Top" Width="316" BorderBrush="Black">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="69*"/>
+                    <ColumnDefinition Width="235*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Codigo" HorizontalAlignment="Left" Margin="20,25,0,0" Name="codeAddCity" VerticalAlignment="Top"/>
+                <TextBox AcceptsTab="False" HorizontalAlignment="Stretch" Margin="3,21,6,0" Name="txtCodeAddCity" Style="{StaticResource EstiloTextBox}" VerticalAlignment="Top" Grid.Column="1"  KeyDown="txtCodeAddCity_KeyDown" Text="{Binding Path=Ciu_Codigo, ValidatesOnDataErrors=True}"/>
+                <Label Content="Nombre" HorizontalAlignment="Left" Margin="15,80,0,0" Name="nameAddCity" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Stretch" Margin="3,76,6,0" Name="txtNameAddCity" Style="{StaticResource EstiloTextBox}" VerticalAlignment="Top" Grid.Column="1" Text="{Binding Path=Ciu_Nombre, ValidatesOnDataErrors=True}"/>
+            </Grid>
+        </GroupBox>
+        <!-- Botones -->
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="18,238,0,0" Name="btnAddCity" VerticalAlignment="Top" Style="{StaticResource StyleBtnPrimary}" Focusable="True" Click="btnAddCity_Click" />
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="235,238,0,0" Name="btnCancelCity" VerticalAlignment="Top" Style="{StaticResource StyleBtnRed}" Focusable="False" Click="btnCancelCity_Click" />
+        <!--Titulo Ventana-->
+        <DockPanel Margin="0,0,0,240">
+            <TextBlock FontSize="28" HorizontalAlignment="Left" Margin="10,0,0,0" Name="txtbTitle" Text="Nueva Ciudad" VerticalAlignment="Bottom" />
+        </DockPanel>
+    </Grid>
+</Window>

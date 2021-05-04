@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3588FB8-120B-421A-9BB8-770C5D76A90C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vistas</RootNamespace>
+    <AssemblyName>Vistas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=1.4.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.1.4.18\lib\net\WpfAnimatedGif.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CRUD\Autobuses\AltaAutoBus.xaml.cs">
+      <DependentUpon>AltaAutoBus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Ciudades\GestionCiudades.xaml.cs">
+      <DependentUpon>GestionCiudades.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Ciudades\AltaCiudad.xaml.cs">
+      <DependentUpon>AltaCiudad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Empresas\AltaEmpresa.xaml.cs">
+      <DependentUpon>AltaEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Empresas\GestionEmpresa.xaml.cs">
+      <DependentUpon>GestionEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Pasajes\PrintPasajes.xaml.cs">
+      <DependentUpon>PrintPasajes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Pasajes\VerPasajes.xaml.cs">
+      <DependentUpon>VerPasajes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Services\AltaServicio.xaml.cs">
+      <DependentUpon>AltaServicio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Services\GestionServicio.xaml.cs">
+      <DependentUpon>GestionServicio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Terminales\AltaTerminal.xaml.cs">
+      <DependentUpon>AltaTerminal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Terminales\GestionTerminal.xaml.cs">
+      <DependentUpon>GestionTerminal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Users\PreviewPrint.xaml.cs">
+      <DependentUpon>PreviewPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Users\UCGestionUsuario.xaml.cs">
+      <DependentUpon>UCGestionUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Users\ViewAltaUsuario.xaml.cs">
+      <DependentUpon>ViewAltaUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Users\ViewOrdenarUsuario.xaml.cs">
+      <DependentUpon>ViewOrdenarUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Users\ViewUsuarios.xaml.cs">
+      <DependentUpon>ViewUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Pasajes\GestionPasajes.xaml.cs">
+      <DependentUpon>GestionPasajes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImpresionPasaje.xaml.cs">
+      <DependentUpon>ImpresionPasaje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarCuenta.xaml.cs">
+      <DependentUpon>RecuperarCuenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="UCInicio.xaml.cs">
+      <DependentUpon>UCInicio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCperfil.xaml.cs">
+      <DependentUpon>UCperfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlLogin.xaml.cs">
+      <DependentUpon>UserControlLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Pasajes\VentaDePasajes.xaml.cs">
+      <DependentUpon>VentaDePasajes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAcercaDe.xaml.cs">
+      <DependentUpon>ViewAcercaDe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBus.xaml.cs">
+      <DependentUpon>ViewBus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLoading.xaml.cs">
+      <DependentUpon>ViewLoading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewThemeSwitcher.xaml.cs">
+      <DependentUpon>ViewThemeSwitcher.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CRUD\Autobuses\AltaAutoBus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Clientes\AltaCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Ciudades\GestionCiudades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Ciudades\AltaCiudad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Autobuses\GestionAutobus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Clientes\GestionCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Empresas\AltaEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Empresas\GestionEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Pasajes\PrintPasajes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Pasajes\VerPasajes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Services\AltaServicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Services\GestionServicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Terminales\AltaTerminal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Terminales\GestionTerminal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Users\PreviewPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Users\UCGestionUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Users\ViewAltaUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Users\ViewOrdenarUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Users\ViewUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Pasajes\GestionPasajes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImpresionPasaje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="CRUD\Clientes\AltaCliente.xaml.cs">
+      <DependentUpon>AltaCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CRUD\Autobuses\GestionAutobus.xaml.cs">
+      <DependentUpon>GestionAutobus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD\Clientes\GestionCliente.xaml.cs">
+      <DependentUpon>GestionCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="RecuperarCuenta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\Template.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates\TemplateDark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCInicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCperfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUD\Pasajes\VentaDePasajes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewAcercaDe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewBus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewLoading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewThemeSwitcher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClasesBases\ClasesBases.csproj">
+      <Project>{F885FCCB-C5D9-479D-8FEF-31FE889E7A7E}</Project>
+      <Name>ClasesBases</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\agregar.png" />
+    <Resource Include="resources\background.png" />
+    <Resource Include="resources\btnMenu.png" />
+    <Resource Include="resources\editar.png" />
+    <Resource Include="resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\access.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\clientesN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\perfil2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\menuMobile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fondo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ServicesXML\AutobusTipoServicio.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\advertencia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2008 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\imgDark.PNG" />
+    <Resource Include="resources\imgLight.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ServicesXML\ThemeService.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\about.png" />
+    <Resource Include="resources\autobus.png" />
+    <Resource Include="resources\autobusN.png" />
+    <Resource Include="resources\ayuda.png" />
+    <Resource Include="resources\buscar.png" />
+    <Resource Include="resources\cancelar.png" />
+    <Resource Include="resources\ciudad.png" />
+    <Resource Include="resources\ciudadN.png" />
+    <Resource Include="resources\configuracion.png" />
+    <Resource Include="resources\guardar.png" />
+    <Resource Include="resources\inicio.png" />
+    <Resource Include="resources\manual.png" />
+    <Resource Include="resources\pasaje.png" />
+    <Resource Include="resources\pasajeN.png" />
+    <Resource Include="resources\perfilUsuario.png" />
+    <Resource Include="resources\tema.png" />
+    <Resource Include="resources\terminal.png" />
+    <Resource Include="resources\terminalN.png" />
+    <Resource Include="resources\usuario.png" />
+    <Resource Include="resources\usuarioN.png" />
+    <Resource Include="resources\viaje.png" />
+    <Resource Include="resources\viajeN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\power-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\anterior.png" />
+    <Resource Include="resources\first.png" />
+    <Resource Include="resources\last.png" />
+    <Resource Include="resources\siguiente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\driver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\vista.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\impresora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\impresora %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\LogoSistema.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\alerta3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\empresa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\asiento_azul.png" />
+    <Resource Include="resources\asiento_rojo.png" />
+    <Resource Include="resources\asiento_verde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\imprimir.png" />
+    <Resource Include="resources\planobus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\pasaje_v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\vinetas_viajo_en_micro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\loadingBus.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\about1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\about5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\about4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\about3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\about2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

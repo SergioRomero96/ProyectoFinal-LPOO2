@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<servicios>
+  <tipo name="Cama Suite"/>
+  <tipo name="Cama Vip"/>
+  <tipo name="Cama"/>
+  <tipo name="Semi Cama"/>
+  <tipo name="Normal"/>
+</servicios>

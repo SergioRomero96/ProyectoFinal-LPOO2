@@ -1,0 +1,58 @@
+﻿<Window x:Class="Vistas.ViewAcercaDe"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ViewAcercaDe" Height="464" Width="739" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Image Height="245" HorizontalAlignment="Left" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="425" Source="/Vistas;component/resources/LogoSistema.png" />
+        <Ellipse Height="75" HorizontalAlignment="Left" Margin="460,6,0,0" Name="imgPerfil" Stretch="Fill" Width="75" VerticalAlignment="Top">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="resources/about5.png"/>
+            </Ellipse.Fill>
+        </Ellipse>
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="543,10,0,0" Name="textBlock1" Text="Gabriel Yarbi" VerticalAlignment="Top" FontSize="11" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,26,0,0" Name="textBlock2" Text="A.P.U." VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,42,0,0" Name="textBlock3" Text="LU: 3527" VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,58,0,0" Name="textBlock4" Text="gabrielyarbi17@gmail.com" VerticalAlignment="Top" />
+        <TextBlock FontFamily="Cambria" FontSize="18" FontWeight="Bold" Height="34" HorizontalAlignment="Left" Margin="56,264,0,0" Name="textBlock21" Text="Sistema Gestión de venta de pasajes" VerticalAlignment="Top" Width="369" FontStyle="Normal" />
+        <TextBlock FontFamily="Cambria" FontSize="18" FontWeight="Bold" Height="25" HorizontalAlignment="Left" Margin="142,292,0,0" Name="textBlock22" Text="Versión 1.0" VerticalAlignment="Top" Width="152" FontStyle="Normal" />
+        <TextBlock FontFamily="Cambria" FontSize="18" FontWeight="Bold" Height="29" HorizontalAlignment="Left" Margin="64,323,0,0" Name="textBlock23" Text="UNJu - Facultad de Ingenieria 2019" VerticalAlignment="Top" Width="361" FontStyle="Normal" />
+        <Ellipse Height="75" HorizontalAlignment="Left" Margin="460,87,0,0" Name="ellipse1" Stretch="Fill" Width="75" VerticalAlignment="Top">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="resources/about1.png" />
+            </Ellipse.Fill>
+        </Ellipse>
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,87,0,0" Name="textBlock5" Text="Romero Sergio Nicolás" VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,103,0,0" Name="textBlock6" Text="A.P.U." VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,119,0,0" Name="textBlock7" Text="LU: 3414" VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,135,0,0" Name="textBlock8" Text="sergio.nicolas777@gmail.com" VerticalAlignment="Top" />
+        <Ellipse Height="75" HorizontalAlignment="Left" Margin="460,168,0,0" Name="ellipse2" Stretch="Fill" Width="75" VerticalAlignment="Top">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="resources/about4.png" />
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse Height="75" HorizontalAlignment="Left" Margin="460,250,0,0" Name="ellipse3" Stretch="Fill" Width="75" VerticalAlignment="Top">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="resources/about2.png" />
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse Height="75" HorizontalAlignment="Left" Margin="460,331,0,0" Name="ellipse4" Stretch="Fill" Width="75" VerticalAlignment="Top">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="resources/about3.png" />
+            </Ellipse.Fill>
+        </Ellipse>
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,168,0,0" Name="textBlock9" Text="Edmundo Dalmiro Vasquez" VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,184,0,0" Name="textBlock10" Text="A.P.U." VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,200,0,0" Name="textBlock11" Text="LU: 3414" VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,216,0,0" Name="textBlock12" Text="dhalmiro05@gmail.com" VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,250,0,0" Name="textBlock13" Text="Alejandro Caceres" VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,266,0,0" Name="textBlock14" Text="A.P.U." VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,282,0,0" Name="textBlock15" Text="LU: 3372" VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,298,0,0" Name="textBlock16" Text="alemar050812@gmail.com" VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,335,0,0" Name="textBlock17" Text="Gaston Enzo Toconas" VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,351,0,0" Name="textBlock18" Text="A.P.U." VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,367,0,0" Name="textBlock19" Text="LU: 3247" VerticalAlignment="Top" />
+        <TextBlock FontSize="11" Height="23" HorizontalAlignment="Left" Margin="543,383,0,0" Name="textBlock20" Text="getoconas@gmail.com" VerticalAlignment="Top" />
+    </Grid>
+</Window>
+

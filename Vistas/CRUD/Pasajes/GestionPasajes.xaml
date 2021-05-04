@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="Vistas.GestionPasajes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:gif="http://wpfanimatedgif.codeplex.com"
+             xmlns:coleccionServicios="clr-namespace:ClasesBases.Services.Implementation;assembly=ClasesBases"
+             xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1100" Name="ucGestionPasajes" Loaded="ucGestionPasajes_Loaded">
+    <UserControl.Resources>
+        <!-- Origen de datos es la Colección de Usuarios -->
+        <ObjectDataProvider 
+            x:Key="LIST_SERVICES" 
+            ObjectType="{x:Type coleccionServicios:ServicioService}" 
+            MethodName="GetAllServices"
+        />
+        <!-- Se crea la vista de colección, Source es el ObjectDataProvider definido arriba -->
+        <CollectionViewSource 
+            x:Key="VISTA_SERVICES" 
+            Source="{StaticResource ResourceKey=LIST_SERVICES}" 
+            
+        >
+            <!-- eventVistaUsuario_Filter => es el Evento filtrado -->
+
+            <CollectionViewSource.SortDescriptions>
+                <!-- Se establece orden de la vista de colección -->
+                <componentModel:SortDescription PropertyName="Ser_Codigo" Direction="Ascending"/>
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+    </UserControl.Resources>
+    
+    <Grid Style="{DynamicResource StyleBodyGestion}">
+      <!--  <Popup Name="loading" HorizontalOffset="250" VerticalOffset="-250" >
+            <Grid >
+                <Image gif:ImageBehavior.RepeatBehavior="Forever" gif:ImageBehavior.AnimatedSource="/resources/loadingBus.gif" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300"/>
+            </Grid>
+        </Popup>-->
+        <DataGrid AutoGenerateColumns="False" HorizontalAlignment="Stretch" Name="dgServicios" VerticalAlignment="Stretch" 
+                  Margin="30,209,30,79"  ColumnWidth="*" ItemsSource="{Binding Source={StaticResource VISTA_SERVICES}}"
+                  Style="{DynamicResource StyleDataGrid}" IsReadOnly="True" HeadersVisibility="Column" VerticalContentAlignment="Center">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Codigo" Binding="{Binding Ser_Codigo}" Width="Auto"></DataGridTextColumn>
+                <DataGridTextColumn Header="Fecha y Hora" Binding="{Binding Ser_FechaHora, StringFormat='{}{0: dd/MM/yyyy, HH:mm}'}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Empresa" Binding="{Binding Autobus.Empresa.Nombre}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Nro Autobus" Binding="{Binding Autobus.Codigo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tipo Servicio" Binding="{Binding Autobus.TipoServicio}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Origen" Binding="{Binding TerminalOrigen.Ciudad.Ciu_Nombre}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Destino" Binding="{Binding TerminalDestino.Ciudad.Ciu_Nombre}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Estado" Binding="{Binding Ser_Estado}"></DataGridTextColumn>
+            </DataGrid.Columns>
+           
+        </DataGrid>
+        
+        <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="30,0,0,20">
+            <Button  HorizontalAlignment="Left" Margin="10,0,0,0" Name="btnAgregar" VerticalAlignment="Bottom" Style="{StaticResource StyleBtnPrimary}" Click="btnAgregar_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/resources/agregar.png"/>
+                    <TextBlock Text="Nuevo" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Left" Margin="10,0,0,0" Name="btnPasajesVendidos" Style="{StaticResource StyleBtnPrimary}" VerticalAlignment="Bottom" Click="btnPasajesVendidos_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="10,0,0,0" Text="Ver Pasajes Vendidos" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+        </WrapPanel>
+        <GroupBox Header="Busqueda" Height="80" HorizontalAlignment="Stretch" Margin="30,105,30,0" Name="groupBox1" Style="{DynamicResource StyleGBBusqueda}">
+            <Grid>
+                <Label Content="Fecha:" Height="28" HorizontalAlignment="Left" Margin="15,12,0,0" Name="label1" VerticalAlignment="Top" Style="{DynamicResource StyleLabel}"/>
+                <DatePicker Height="25" HorizontalAlignment="Left" Margin="65,13,0,0" Name="dpFecha" VerticalAlignment="Top" Width="120" SelectedDateChanged="dpFecha_SelectedDateChanged" />
+                <Label Content="Terminal Origen:" Height="28" HorizontalAlignment="Left" Margin="210,12,0,0" Name="label2" Style="{DynamicResource StyleLabel}" VerticalAlignment="Top" />
+                <Label Content="Terminal Destino:" Height="28" HorizontalAlignment="Left" Margin="503,12,0,0" Name="label3" Style="{DynamicResource StyleLabel}" VerticalAlignment="Top" />
+                <TextBox Height="25" HorizontalAlignment="Left" Margin="320,13,0,0" Name="txtOrigen" VerticalAlignment="Top" Width="150" TextChanged="txtOrigen_TextChanged" />
+                <TextBox Height="25" HorizontalAlignment="Left" Margin="620,13,0,0" Name="txtDestino" VerticalAlignment="Top" Width="150" TextChanged="txtDestino_TextChanged" />
+            </Grid>
+        </GroupBox>
+        <DockPanel Height="75" HorizontalAlignment="Stretch"  Name="pnlTitulo" VerticalAlignment="Top" Style="{DynamicResource StyleHeaderGestion}"  >
+            <DockPanel.Effect>
+                <DropShadowEffect Color="Gray" Direction="270" BlurRadius="25" ShadowDepth="5" />
+            </DockPanel.Effect>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <Image Style="{DynamicResource imgGestionPasajes}"/>
+                <TextBlock Height="Auto" Name="textBlock1" Text="Gestion de Pasajes" Style="{DynamicResource StyleHeaderTitulo}" />
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>

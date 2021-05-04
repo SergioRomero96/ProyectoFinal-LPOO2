@@ -1,0 +1,58 @@
+﻿<Window x:Class="Vistas.AltaAutoBus"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:svc="clr-namespace:ClasesBases;assembly=ClasesBases"
+        Title="AltaAutoBus" Height="550" Width="350" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closing="Window_Closing" ResizeMode="NoResize" GotFocus="Window_GotFocus">
+    <Window.Resources>
+        <XmlDataProvider x:Key="tipo_servicio" Source="/ServicesXML/AutobusTipoServicio.xml" XPath="/servicios"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="55" />
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <TextBlock  HorizontalAlignment="Left" Margin="10,0,0,0" Name="textBlock1" Text="Registrar Autobus" FontSize="28" VerticalAlignment="Bottom" />
+        </DockPanel>
+
+        <DockPanel Grid.Row="2">
+            <Button Content="Guardar" Margin="10,0,0,0"  HorizontalAlignment="Left"  Name="btnGuardar" VerticalAlignment="Center"  Click="btnGuardar_Click" Style="{StaticResource StyleButtonGuardar}"/>
+            <Button Content="Cancelar" Margin="0,0,10,0" HorizontalAlignment="Right" Name="btnCancelar" VerticalAlignment="Center" Style="{StaticResource StyleButtonCancelar}" Click="btnCancelar_Click"/>
+        </DockPanel>
+        <GroupBox Grid.Row="1" Margin="10" Header="Datos del Autobus"  HorizontalAlignment="Stretch"  Name="groupBox1" VerticalAlignment="Stretch" >
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="86*" />
+                    <ColumnDefinition Width="230*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Nro de Coche"  HorizontalAlignment="Left" Margin="-6,15,0,0" Name="lbl" VerticalAlignment="Top" />
+                <TextBox Height="24" HorizontalAlignment="Stretch" Margin="0,15,13,0" Name="txtCodigo" VerticalAlignment="Top"  MaxLength="7" KeyDown="txtCodigo_KeyDown"  Grid.Column="1" Style="{StaticResource EstiloTextBoxIdataError}" Text="{Binding Path=Codigo, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Empresa"  HorizontalAlignment="Left" Margin="14,65,0,0" Name="lblEmpresa" VerticalAlignment="Top" />
+                <ComboBox Height="24" HorizontalAlignment="Stretch" Margin="0,65,12,0" Name="cmbEmpresa" VerticalAlignment="Top"  Grid.Column="1" Text="{Binding Path=Empresa, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" />
+
+                <Label Content="Capacidad" Height="32" HorizontalAlignment="Left" Margin="14,115,0,0" Name="label2" VerticalAlignment="Top"  />
+                <ComboBox  Height="24" HorizontalAlignment="Stretch" Margin="0,115,12,0" Name="txtCapacidad" VerticalAlignment="Top"  Grid.Column="1" Text="{Binding Path=Capacidad, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}" SelectedIndex="0" />
+                <Label Content="Tipo"  HorizontalAlignment="Left" Margin="40,165,0,0" Name="label3" VerticalAlignment="Top" />
+                <ComboBox Height="24" HorizontalAlignment="Stretch" Margin="0,165,12,0" Name="cmbTipo" VerticalAlignment="Top"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource tipo_servicio},XPath=tipo/@name}" SelectedIndex="4" SelectionChanged="cmbTipo_SelectionChanged" />
+                <Label Content="Matricula" Height="32" HorizontalAlignment="Left" Margin="20,215,0,0" Name="label1" VerticalAlignment="Top" />
+                <TextBox Height="24" HorizontalAlignment="Stretch" Margin="0,215,12,0" Name="txtMatricula" VerticalAlignment="Top" MaxLength="8" Grid.Column="1" Style="{StaticResource EstiloTextBoxIdataError}" Text="{Binding Path=Matricula, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Pisos" Height="32" HorizontalAlignment="Left" Margin="20,265,0,0" Name="lblPisos" VerticalAlignment="Top" />
+                <ComboBox Height="24" HorizontalAlignment="Stretch" Margin="0,265,12,0" Name="cmbPisos" VerticalAlignment="Top"  Grid.Column="1" SelectedIndex="0" SelectionChanged="cmbPisos_SelectionChanged" />
+
+
+                <Label Content="Foto" Height="32" HorizontalAlignment="Left" Margin="20,310,0,0" Name="lblFoto" VerticalAlignment="Top" />
+                <Rectangle Height="80"  Width="120" Grid.Column="1" Margin="0 300 0 0" Name="mediaFoto" HorizontalAlignment="Stretch" >
+
+
+                </Rectangle>
+
+
+
+                <Button Grid.Column="1" Width="20" Height="15" Margin="0 0 0 10" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="..." FontSize="11" FontWeight="Black" FontFamily="Arial" Click="Button_Click" />
+
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

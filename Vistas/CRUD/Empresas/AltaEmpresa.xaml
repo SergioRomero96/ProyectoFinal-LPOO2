@@ -1,0 +1,52 @@
+﻿<Window x:Class="Vistas.CRUD.Empresas.AltaEmpresa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AltaEmpresa" Height="470" Width="350" WindowStartupLocation="CenterScreen" Closing="Window_Closing" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="55" />
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <TextBlock  HorizontalAlignment="Left" Margin="10,0,0,0" Name="txtblkREmpresa" Text="Registrar Empresa" FontSize="28" VerticalAlignment="Bottom" />
+        </DockPanel>
+        <GroupBox Grid.Row="1" Margin="10" Header="Datos"  HorizontalAlignment="Stretch"  Name="groupBox1" VerticalAlignment="Stretch">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="55" />
+                    <RowDefinition Height="55" />
+                    <RowDefinition Height="55" />
+                    <RowDefinition Height="55" />
+                    <RowDefinition Height="55" />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="65" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Codigo:"  HorizontalAlignment="Right"  Name="lblCodigo" VerticalAlignment="Center" />
+                <TextBox Height="24" HorizontalAlignment="Stretch" Margin="10" Name="txtCodigo" VerticalAlignment="Center" MaxLength="7" Grid.Column="1" Style="{StaticResource EstiloTextBoxIdataError}" 
+                         Text="{Binding Path=Codigo, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Row="1" Content="Nombre:"  HorizontalAlignment="Right"  Name="lblNombre" VerticalAlignment="Center" />
+                <TextBox Grid.Row="1" Margin="10" Height="24" HorizontalAlignment="Stretch" Name="txtNombre" VerticalAlignment="Center"  MaxLength="40" Grid.Column="1" Style="{StaticResource EstiloTextBoxIdataError}" 
+                         Text="{Binding Path=Nombre, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Row="2" Content="Direccion:"  HorizontalAlignment="Right"  Name="lblDireccion" VerticalAlignment="Center" />
+                <TextBox Grid.Row="2" Margin="10" Height="24" HorizontalAlignment="Stretch" Name="txtDireccion" VerticalAlignment="Center"  MaxLength="40" Grid.Column="1" Style="{StaticResource EstiloTextBoxIdataError}" 
+                         Text="{Binding Path=Direccion, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Row="3" Content="Telefono:"  HorizontalAlignment="Right"  Name="lblTelefono" VerticalAlignment="Center" />
+                <TextBox Grid.Row="3" Margin="10" Height="24" HorizontalAlignment="Stretch" Name="txtTelefono" VerticalAlignment="Center"  MaxLength="13" Grid.Column="1" Style="{StaticResource EstiloTextBoxIdataError}" 
+                         Text="{Binding Path=Telefono, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Grid.Row="4" Content="Email:"  HorizontalAlignment="Right"  Name="lblEmail" VerticalAlignment="Center" />
+                <TextBox Grid.Row="4" Margin="10" Height="24" HorizontalAlignment="Stretch" Name="txtEmail" VerticalAlignment="Center"  MaxLength="40" Grid.Column="1" Style="{StaticResource EstiloTextBoxIdataError}" 
+                         Text="{Binding Path=Email, ValidatesOnDataErrors=True,UpdateSourceTrigger=PropertyChanged}"/>
+
+            </Grid>
+        </GroupBox>
+        <DockPanel Grid.Row="2">
+            <Button Content="Guardar" Margin="10,0,0,0"  HorizontalAlignment="Left"  Name="btnGuardar" VerticalAlignment="Center"  Style="{StaticResource StyleButtonGuardar}" Click="btnGuardar_Click" />
+            <Button Content="Cancelar" Margin="0,0,10,0" HorizontalAlignment="Right" Name="btnCancelar" VerticalAlignment="Center" Style="{StaticResource StyleButtonCancelar}" Click="btnCancelar_Click" />
+        </DockPanel>
+
+    </Grid>
+</Window>

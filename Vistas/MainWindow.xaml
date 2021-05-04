@@ -1,0 +1,159 @@
+﻿<Window x:Class="Vistas.MainWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="650" Width="1100" WindowStartupLocation="CenterScreen"  WindowStyle="SingleBorderWindow" ResizeMode="CanResize" WindowState="Normal" MinHeight="600" MinWidth="1100" KeyDown="Window_KeyDown" Loaded="Window_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="225" Name="pnlMenu" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Name="pnlContenedor" Grid.Column="1" VerticalAlignment="Stretch" Margin="0,0,0,75"></DockPanel>
+        <DockPanel Grid.Column="0" HorizontalAlignment="Stretch" Style="{DynamicResource StyleAside}">
+            <DockPanel.Effect>
+                <DropShadowEffect Color="Gray" Direction="360" BlurRadius="20" ShadowDepth="2"  />
+            </DockPanel.Effect>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Vertical">
+                    <Button Name="btnMenu" Click="btnMenu_Click" Style="{StaticResource StyleBtnMenu}" Margin="0,5,15,25" >
+
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="resources/menuMobile.png"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Height="45" HorizontalAlignment="Stretch"  Name="btnInicio" VerticalAlignment="Top"  Style="{StaticResource StyleBtnAzul}" Click="btnInicio_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="33" Height="33"  Source="resources/inicio.png"/>
+                            <TextBlock Text="Inicio" Style="{StaticResource StyleTextBlockMenu}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Height="45" HorizontalAlignment="Stretch"  Name="btnClientes" VerticalAlignment="Top"  Click="btnClientes_Click" Style="{StaticResource StyleBtnAzul}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="33" Height="33" Source="resources/clientes.png"/>
+                            <TextBlock Text="Clientes" Style="{StaticResource StyleTextBlockMenu}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button  Name="btnUsuarios"  Style="{StaticResource StyleBtnAzul}" Click="btnUsuarios_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="33" Height="33"  Source="resources/usuario.png"/>
+                            <TextBlock Text="Usuarios" Style="{StaticResource StyleTextBlockMenu}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button  Name="btnAutoBus" Click="btnAutobus_Click" Style="{StaticResource StyleBtnAzul}" >
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="33" Height="33"  Source="resources/autobus.png"/>
+                            <TextBlock Text="Autobus" Style="{StaticResource StyleTextBlockMenu}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button  Name="btnCiudad"  Style="{StaticResource StyleBtnAzul}" Click="btnCiudad_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="33" Height="33"  Source="resources/ciudad.png"/>
+                            <TextBlock Text="Ciudades" Style="{StaticResource StyleTextBlockMenu}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button  Name="btnTerminal"  Style="{StaticResource StyleBtnAzul}" Click="btnTerminal_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="33" Height="33"  Source="resources/terminal.png"/>
+                            <TextBlock Text="Terminal" Style="{StaticResource StyleTextBlockMenu}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button  Name="btnViaje"  Style="{StaticResource StyleBtnAzul}" Click="btnViaje_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="33" Height="33"  Source="resources/viaje.png"/>
+                            <TextBlock Text="Viaje" Style="{StaticResource StyleTextBlockMenu}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button  Name="btnPasaje"  Style="{StaticResource StyleBtnAzul}" Click="btnPasaje_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="33" Height="33"  Source="resources/pasaje.png"/>
+                            <TextBlock Text="Pasaje" Style="{StaticResource StyleTextBlockMenu}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button  Name="btnEmpresas"  Style="{StaticResource StyleBtnMenuDropdown}" Click="btnEmpresas_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="33" Height="33"  Source="resources/empresa.png"/>
+                            <TextBlock Text="Empresas" Style="{StaticResource StyleTextBlockMenu}"/>
+                        </StackPanel>
+                    </Button>
+                    <Button  Name="btnConfiguracion"  Style="{StaticResource StyleBtnMenuDropdown}" Click="btnConfiguracion_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="33" Height="33" Source="resources/configuracion.png"/>
+                            <TextBlock Text="Configuracion" Style="{StaticResource StyleTextBlockMenu}"/>
+                        </StackPanel>
+                    </Button>
+                    <DockPanel Background="#3D8DE2" Name="pnlConfiguracion">
+                        <StackPanel>
+                            <Button  Name="btnActualizarPerfil"  Style="{StaticResource StyleBtnSubMenu}" Click="btnActualizarPerfil_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="33" Height="33"  Source="resources/perfilUsuario.png"/>
+                                    <TextBlock Text="Editar Perfil" Style="{StaticResource StyleTextBlockMenu}" FontSize="13"/>
+                                </StackPanel>
+                            </Button>
+                            <Button  Name="btnCambiarTema"  Style="{StaticResource StyleBtnSubMenu}" Click="btnCambiarTema_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="33" Height="33"  Source="resources/tema.png"/>
+                                    <TextBlock Text="Cambiar Tema" Style="{StaticResource StyleTextBlockMenu}" FontSize="13"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </DockPanel>
+                    <Button  Name="btnAyuda"  Style="{StaticResource StyleBtnMenuDropdown}" Click="btnAyuda_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="33" Height="33"  Source="resources/ayuda.png"/>
+                            <TextBlock Text="Ayuda" Style="{StaticResource StyleTextBlockMenu}"/>
+                        </StackPanel>
+                    </Button>
+                    <DockPanel Background="#3D8DE2" Name="pnlAyuda">
+                        <StackPanel>
+                            <Button  Name="btnManual"  Style="{StaticResource StyleBtnSubMenu}" Click="btnManual_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="33" Height="33"  Source="resources/manual.png"/>
+                                    <TextBlock Text="Manual de Usuario" Style="{StaticResource StyleTextBlockMenu}" FontSize="13"/>
+                                </StackPanel>
+                            </Button>
+                            <Button  Name="btnAcercaDe"  Style="{StaticResource StyleBtnSubMenu}" Click="btnAcercaDe_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="33" Height="33"  Source="resources/about.png"/>
+                                    <TextBlock Text="Acerca De" Style="{StaticResource StyleTextBlockMenu}" FontSize="13"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </DockPanel>
+
+                </StackPanel>
+                <Button Name="btnSalir" Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,0,15" Style="{StaticResource StyleBtnAzul}" Click="btnSalir_Click" Focusable="False">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="33" Height="33" Source="/resources/power-button.png"/>
+                        <TextBlock Text="Cerrar Sesión" Style="{StaticResource StyleTextBlockMenu}" />
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </DockPanel>
+        <DockPanel Grid.Column="1"  Background="#373D45" HorizontalAlignment="Stretch"  Name="dockPanel1" VerticalAlignment="Bottom" Height="80">
+            <Ellipse Height="70" HorizontalAlignment="Left" Margin="20,0,0,0" Name="imgPerfil" Stretch="Fill" Width="70" >
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="resources/perfil2.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center"  Width="auto" HorizontalAlignment="Left" Margin="10,0,0,0">
+                <TextBlock Text="Usuario: " Name="lblUser" Foreground="White" FontSize="15" Padding="2"/>
+                <TextBlock Text="Rol: "   Name="lblRol" Foreground="White" FontSize="15" Padding="2"/>
+                <TextBlock Padding="2">
+                    <Hyperlink Foreground="DodgerBlue" FontSize="15"  Click="btnActualizarPerfil_Click" >Editar Perfil</Hyperlink>
+                </TextBlock>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Margin="5">
+                <TextBlock Text="00:00:00"  Name="lblHora" FontSize="34"  Foreground="White" TextAlignment="Right" />
+                <TextBlock Text="Lunes, 26 de septiembre 2018"  Name="lblFecha" FontSize="15"  Foreground="White" />
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>
+
